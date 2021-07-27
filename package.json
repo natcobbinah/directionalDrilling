@@ -1,0 +1,34 @@
+{
+  "name": "ddrilling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natcobbinah/directionalDrilling.git"
+  },
+  "keywords": [
+    "directional",
+    "drilling"
+  ],
+  "author": "Nathaniel Cobbinah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/natcobbinah/directionalDrilling/issues"
+  },
+  "homepage": "https://github.com/natcobbinah/directionalDrilling#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "jest": "^27.0.6",
+    "prettier": "^2.3.2",
+    "ts-jest": "^27.0.4",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.3.5"
+  }
+}
