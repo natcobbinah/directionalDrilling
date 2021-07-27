@@ -1,6 +1,6 @@
-import { directionDrillingMethods } from "./directionalDrillingMethods";
+import { DirectionDrillingMethods } from "./directionalDrillingMethods";
 
-class directionalDrilling implements directionDrillingMethods {
+export class DirectionalDrilling implements DirectionDrillingMethods {
 
   private valueOverbuildUp = 36000;
   private valuetimesbuildUp = 6.283185307179586;
@@ -23,7 +23,7 @@ class directionalDrilling implements directionDrillingMethods {
     
   build_UpAngle(value: number): number {
       this._buildUpAngle = value;
-      let radius:number = (this.valueOverbuildUp / (value * this.valuetimesbuildUp));
+      const radius:number = (this.valueOverbuildUp / (value * this.valuetimesbuildUp));
       return radius;
   }
     
@@ -32,14 +32,14 @@ class directionalDrilling implements directionDrillingMethods {
       this._kickOffPoint = kickoffPoint;
       this._trueVerticalDepth = trueVerticalDepth;
       
-      let angleX: number = (value - this.build_UpAngle(this._buildUpAngle)) /
+      const angleX: number = (value - this.build_UpAngle(this._buildUpAngle)) /
           (this._trueVerticalDepth - this._kickOffPoint);
       return this.toDegrees(Math.atan(angleX));
 
   }
     
   total_AngleY(): number {
-      let angleY = this.build_UpAngle(this._buildUpAngle) *
+      const angleY = this.build_UpAngle(this._buildUpAngle) *
           Math.cos(this.toRadians(
               this.horizontal_Displacement(this._horizontalDisplacement, this._kickOffPoint, this._trueVerticalDepth         
           )))
@@ -49,14 +49,14 @@ class directionalDrilling implements directionDrillingMethods {
   }
     
   total_AngleXplusY(): number {
-      let sumofAngleXplusY: number = this.total_AngleY() +
+      const sumofAngleXplusY: number = this.total_AngleY() +
           this.horizontal_Displacement(this._horizontalDisplacement, this._kickOffPoint, this._trueVerticalDepth);
       return sumofAngleXplusY;
   }
     
   measured_DepthAtEndOfBuildSection(kickoffPoint: number): number {
       this._kickOffPoint = kickoffPoint;
-      let setMeasuredDepth = this.total_AngleXplusY() * this.valuetimesTotalAngleXplusY * Math.PI *
+      const setMeasuredDepth = this.total_AngleXplusY() * this.valuetimesTotalAngleXplusY * Math.PI *
                                 this.build_UpAngle(this._buildUpAngle)
                                 /
           this.valueDividebyBuildUpAngle + kickoffPoint;
@@ -65,36 +65,26 @@ class directionalDrilling implements directionDrillingMethods {
     
   trueVertical_DepthAtEndOfBuild(KickOffPoint: number): number {
       this._kickOffPoint = KickOffPoint;
-      let trueVerticalDepthCompute: number = this.build_UpAngle(this._buildUpAngle) *
+      const trueVerticalDepthCompute: number = this.build_UpAngle(this._buildUpAngle) *
           Math.sin(this.toRadians(this.total_AngleXplusY())) + KickOffPoint;
       return trueVerticalDepthCompute;
   }
     
   horizontal_DeviationAtEndOfBuildUp(): number {
-      let radiusValue:number = this.build_UpAngle(this._buildUpAngle);
-      let cosValue: number = radiusValue * Math.cos(this.toRadians(this.total_AngleXplusY()));
+      const radiusValue:number = this.build_UpAngle(this._buildUpAngle);
+      const cosValue: number = radiusValue * Math.cos(this.toRadians(this.total_AngleXplusY()));
       return (radiusValue - cosValue);
     }
     
   total_MeasuredDepth(trueVerticalDepth: number, kickoffPoint: number): number {
     this._kickOffPoint = kickoffPoint;
     this._trueVerticalDepth = trueVerticalDepth;
-    let totalMeasuredDepth:number  =  trueVerticalDepth - kickoffPoint;
-    let Rsina:number = this.build_UpAngle(this._buildUpAngle) * Math.sin(this.toRadians(this.total_AngleXplusY()));
-    let cosA: number = Math.cos(this.toRadians(this.total_AngleXplusY()))
-    let getTrueVerticalDepth:number = this.measured_DepthAtEndOfBuildSection(this._kickOffPoint);
-    let setFromArcToTarget = (totalMeasuredDepth - Rsina) / cosA;
-    let totalDepth = setFromArcToTarget + getTrueVerticalDepth;
+    const totalMeasuredDepth:number  =  trueVerticalDepth - kickoffPoint;
+    const Rsina:number = this.build_UpAngle(this._buildUpAngle) * Math.sin(this.toRadians(this.total_AngleXplusY()));
+    const cosA: number = Math.cos(this.toRadians(this.total_AngleXplusY()))
+    const getTrueVerticalDepth:number = this.measured_DepthAtEndOfBuildSection(this._kickOffPoint);
+    const setFromArcToTarget = (totalMeasuredDepth - Rsina) / cosA;
+    const totalDepth = setFromArcToTarget + getTrueVerticalDepth;
     return totalDepth;
   }
 }
-
-let drilling = new directionalDrilling();
-console.log("Radius = " + drilling.build_UpAngle(2));
-console.log("Angle X = " + drilling.horizontal_Displacement(3000, 2000, 10000))
-console.log("Angle Y = " + drilling.total_AngleY())
-console.log("Angle (X+Y) = " +  drilling.total_AngleXplusY())
-console.log("Measured Depth At the End of Build = " + drilling.measured_DepthAtEndOfBuildSection(2000))
-console.log("Horizontal Deviation at End of Build = " + drilling.horizontal_DeviationAtEndOfBuildUp())
-console.log("Total Measured Depth = " + drilling.total_MeasuredDepth(10000,2000))
-

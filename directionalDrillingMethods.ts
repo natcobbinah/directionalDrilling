@@ -1,4 +1,4 @@
-export  interface directionDrillingMethods{
+export  interface DirectionDrillingMethods{
     build_UpAngle(value: number): number;
 
     horizontal_Displacement(value: number, kickoffPoint: number, trueVerticalDepth:number): number;

@@ -1,13 +1,12 @@
-export interface directionDrillingMethods {
-    build_UpAngle(value: Number): Number;
-    horizontal_Displacement(value: Number, kickoffPoint: Number, trueVerticalDepth: Number): Number;
-    kickOff_Point(value: Number): Number;
-    true_VerticalDepth(value: Number): Number;
-    total_AngleY(): Number;
-    total_AngleXplusY(): Number;
-    measured_DepthAtEndOfBuildSection(kickoffPoint: Number): Number;
-    trueVertical_DepthAtEndOfBuild(KickOffPoint: Number): Number;
-    horizontal_DeviationAtEndOfBuildUp(): Number;
-    total_MeasuredDepth(trueVerticalDepth: Number, kickoffPoint: Number): Number;
-    toDegrees(value: number): Number;
+export interface DirectionDrillingMethods {
+    build_UpAngle(value: number): number;
+    horizontal_Displacement(value: number, kickoffPoint: number, trueVerticalDepth: number): number;
+    total_AngleY(): number;
+    total_AngleXplusY(): number;
+    measured_DepthAtEndOfBuildSection(kickoffPoint: number): number;
+    trueVertical_DepthAtEndOfBuild(KickOffPoint: number): number;
+    horizontal_DeviationAtEndOfBuildUp(): number;
+    total_MeasuredDepth(trueVerticalDepth: number, kickoffPoint: number): number;
+    toDegrees(radians: number): number;
+    toRadians(degrees: number): number;
 }
