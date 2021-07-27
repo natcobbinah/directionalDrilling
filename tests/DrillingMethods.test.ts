@@ -1,6 +1,6 @@
 import { DirectionalDrilling } from "../DirectionalDrilling";
 
-let ddrilling = new DirectionalDrilling();
+const ddrilling = new DirectionalDrilling();
 
 test('Radius', () => {
     expect(ddrilling.build_UpAngle(2)).toBe(2864.7889756541163)
