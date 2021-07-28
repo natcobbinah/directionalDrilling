@@ -21,6 +21,7 @@ Methods available include the following:
     
     
 #using Classes and Methods
+    #TYPESCRIPT
 
     import { DirectionalDrilling } from "ddrilling";
 
@@ -47,6 +48,32 @@ Methods available include the following:
     //To compute Total measured Depth
     console.log("Total Measured Depth = " + drilling.total_MeasuredDepth(10000, 2000));
     
+   #JAVASCRIPT
+   
+    var ddrilling_1 = require("ddrilling");
+    var drilling = new ddrilling_1.DirectionalDrilling();
+    
+    //To compute the radius
+    console.log("Radius" + drilling.build_UpAngle(2));
+    
+    //To compute Angle X
+    console.log("Angle X = " + drilling.horizontal_Displacement(3000, 2000, 10000));
+    
+    //To compute Angle Y
+    console.log("Angle Y = " + drilling.total_AngleY());
+    
+    //To compute Angle X + Y
+    console.log("Angle (X+Y) = " + drilling.total_AngleXplusY());
+    
+    //To compute measured Depth at the end of Build Up
+    console.log("Measured Depth At the End of Build = " + drilling.measured_DepthAtEndOfBuildSection(2000));
+        
+    //To compute Horizontal deviation at the end of Build
+    console.log("Horizontal Deviation at End of Build = " + drilling.horizontal_DeviationAtEndOfBuildUp());
+        
+    //To compute Total measured Depth
+    console.log("Total Measured Depth = " + drilling.total_MeasuredDepth(10000, 2000));
+   
 #sample Question used for the above implementation
 
     Given a planning procedure for the build and hold trajectory calculate the drift angle and the true vertical depth,
