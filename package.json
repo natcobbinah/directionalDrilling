@@ -1,44 +1,26 @@
 {
-  "name": "ddrilling",
-  "version": "1.0.6",
-  "description": "Directional Drilling",
-  "main": "lib/src/index.js",
-  "types": "lib/src/index.d.ts",
+  "name": "DDRILLING",
+  "version": "1.0.0",
+  "description": "npm package for directional drilling problems",
+  "main": "dist/index.js",
+  "types":"dist/index.d.ts",
+  "files":[
+    "dist"
+  ] ,
   "scripts": {
-    "test": "jest --config jestconfig.json",
-    "build": "tsc",
-    "format": "prettier --write \"lib/**/*.ts\" \"lib/**/*.js\"",
-    "lint": "tslint -p tsconfig.json",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
-    "version": "npm run format",
-    "postversion": "git push && git push --tags"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"tsc",
+    "prepare":"npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natcobbinah/directionalDrilling.git"
   },
-  "keywords": [
-    "directional",
-    "drilling"
-  ],
+  "keywords": ["directional","drilling"],
   "author": "Nathaniel Cobbinah",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/natcobbinah/directionalDrilling/issues"
   },
-  "homepage": "https://github.com/natcobbinah/directionalDrilling#readme",
-  "devDependencies": {
-    "@types/jest": "^26.0.24",
-    "jest": "^27.0.6",
-    "prettier": "^2.3.2",
-    "ts-jest": "^27.0.4",
-    "tslint": "^6.1.3",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^4.3.5"
-  },
-  "files": [
-    "lib/**/*"
-  ]
+  "homepage": "https://github.com/natcobbinah/directionalDrilling#readme"
 }

@@ -1,4 +1,4 @@
-import { DirectionalDrilling } from "../DirectionalDrilling";
+import { DirectionalDrilling } from "./src/DirectionalDrilling";
 
 const ddrilling = new DirectionalDrilling();
 
