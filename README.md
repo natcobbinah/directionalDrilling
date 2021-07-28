@@ -20,8 +20,9 @@ Methods available include the following:
     total_MeasuredDepth(trueVerticalDepth: number, kickoffPoint: number): number;
     
     
-#using Classes and Methods
-    #TYPESCRIPT
+# using Classes and Methods
+
+   # TYPESCRIPT
 
     import { DirectionalDrilling } from "ddrilling";
 
@@ -48,7 +49,7 @@ Methods available include the following:
     //To compute Total measured Depth
     console.log("Total Measured Depth = " + drilling.total_MeasuredDepth(10000, 2000));
     
-   #JAVASCRIPT
+   # JAVASCRIPT
    
     var ddrilling_1 = require("ddrilling");
     var drilling = new ddrilling_1.DirectionalDrilling();
