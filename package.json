@@ -2,8 +2,8 @@
   "name": "ddrilling",
   "version": "1.0.5",
   "description": "Directional Drilling",
-  "main": "lib/DirectionalDrilling.js",
-  "types": "lib/DirectionalDrilling.d.ts",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
