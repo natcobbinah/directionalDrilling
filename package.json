@@ -1,6 +1,6 @@
 {
   "name": "ddrilling",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Directional Drilling",
   "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",
