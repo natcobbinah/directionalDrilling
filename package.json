@@ -1,22 +1,25 @@
 {
   "name": "DDRILLING",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "npm package for directional drilling problems",
   "main": "dist/index.js",
-  "types":"dist/index.d.ts",
-  "files":[
+  "types": "dist/index.d.ts",
+  "files": [
     "dist"
-  ] ,
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"tsc",
-    "prepare":"npm run build"
+    "build": "tsc",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natcobbinah/directionalDrilling.git"
   },
-  "keywords": ["directional","drilling"],
+  "keywords": [
+    "directional",
+    "drilling"
+  ],
   "author": "Nathaniel Cobbinah",
   "license": "ISC",
   "bugs": {
