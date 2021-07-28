@@ -1,2 +1,1 @@
-declare class directionalDrilling {
-}
+declare class directionalDrilling {}
