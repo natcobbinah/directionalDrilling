@@ -25,5 +25,6 @@
   "bugs": {
     "url": "https://github.com/natcobbinah/directionalDrilling/issues"
   },
-  "homepage": "https://github.com/natcobbinah/directionalDrilling#readme"
+  "homepage": "https://github.com/natcobbinah/directionalDrilling#readme",
+  "devDependencies": {}
 }
