@@ -1,13 +1,13 @@
 {
   "name": "ddrilling",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Directional Drilling",
   "main": "lib/DirectionalDrilling.js",
-  "types":"lib/DirectionalDrilling.d.ts",
+  "types": "lib/DirectionalDrilling.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write \"lib/**/*.ts\" \"lib/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
@@ -41,4 +41,4 @@
   "files": [
     "lib/**/*"
   ]
-} 
+}
