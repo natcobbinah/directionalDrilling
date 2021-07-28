@@ -49,7 +49,8 @@ Methods available include the following:
     
 #sample Question used for the above implementation
 
-    Given a planning procedure for the build and hold trajectory calculate the drift angle and the true vertical depth, given the following basic data:
+    Given a planning procedure for the build and hold trajectory calculate the drift angle and the true vertical depth,
+    given the following basic data:
 
     Basic Data
     Kick Off Point = 2000
