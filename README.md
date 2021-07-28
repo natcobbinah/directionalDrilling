@@ -46,4 +46,14 @@ Methods available include the following:
 
     //To compute Total measured Depth
     console.log("Total Measured Depth = " + drilling.total_MeasuredDepth(10000, 2000));
+    
+#sample Question used for the above implementation
+
+    Given a planning procedure for the build and hold trajectory calculate the drift angle and the true vertical depth, given the following basic data:
+
+    Basic Data
+    Kick Off Point = 2000
+    True Vertical depth = 10000
+    Horizontal Displacement from Target = 3000
+    BuildUpRate = 2degrees/100ft
 
