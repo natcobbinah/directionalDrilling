@@ -1,6 +1,7 @@
 "use strict";
 exports.__esModule = true;
 exports.DirectionalDrilling = void 0;
+var ApexCharts = require("apexcharts");
 var DirectionalDrilling = /** @class */ (function () {
     function DirectionalDrilling() {
         this.valueOverbuildUp = 36000;
@@ -74,6 +75,44 @@ var DirectionalDrilling = /** @class */ (function () {
         var totalDepth = setFromArcToTarget + getTrueVerticalDepth;
         return totalDepth;
     };
+    DirectionalDrilling.prototype.drawGraph = function (kickoffPoint, trueVerticalDepth, horizontal_displacement_from_target, buildUpRate) {
+        var options = {
+            series: [{
+                    name: "Desktops",
+                    data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+                }],
+            chart: {
+                height: 350,
+                type: 'line',
+                zoom: {
+                    enabled: false
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'straight'
+            },
+            title: {
+                text: 'Product Trends by Month',
+                align: 'left'
+            },
+            grid: {
+                row: {
+                    colors: ['#f3f3f3', 'transparent'],
+                    opacity: 0.5
+                }
+            },
+            xaxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
+            }
+        };
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+    };
     return DirectionalDrilling;
 }());
 exports.DirectionalDrilling = DirectionalDrilling;
+var ddrill = new DirectionalDrilling();
+ddrill.drawGraph(20, 34, 560, 43);

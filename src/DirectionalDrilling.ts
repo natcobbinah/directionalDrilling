@@ -1,7 +1,8 @@
 import { DirectionDrillingMethods } from "./directionalDrillingMethods";
+import ApexCharts = require('apexcharts');
 
 export class DirectionalDrilling implements DirectionDrillingMethods {
-
+  
   private valueOverbuildUp = 36000;
   private valuetimesbuildUp = 6.283185307179586;
   private maxRadianValue = 180;
@@ -87,4 +88,44 @@ export class DirectionalDrilling implements DirectionDrillingMethods {
     const totalDepth = setFromArcToTarget + getTrueVerticalDepth;
     return totalDepth;
   }
+  
+  drawGraph(kickoffPoint: number, trueVerticalDepth: number, horizontal_displacement_from_target: number, buildUpRate: number): any {
+      var options = {
+          series: [{
+            name: "Desktops",
+            data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+        }],
+          chart: {
+          height: 350,
+          type: 'line',
+          zoom: {
+            enabled: false
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'straight'
+        },
+        title: {
+          text: 'Product Trends by Month',
+          align: 'left'
+        },
+        grid: {
+          row: {
+            colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+            opacity: 0.5
+          },
+        },
+        xaxis: {
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        }};
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+  }
 }
+
+const ddrill = new DirectionalDrilling();
+ddrill.drawGraph(20, 34, 560, 43);

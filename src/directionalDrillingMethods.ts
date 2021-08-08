@@ -18,4 +18,7 @@ export  interface DirectionDrillingMethods{
     toDegrees(radians: number): number;
 
     toRadians(degrees: number): number;
+
+    drawGraph(kickoffPoint: number, trueVerticalDepth: number,
+        horizontal_displacement_from_target: number, buildUpRate: number): any;
 }
