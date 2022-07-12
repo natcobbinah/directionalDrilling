@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "test": "jest --config jestconfig.json",
+    "test": "jest",
     "build": "tsc",
     "prepare": "npm run build"
   },
@@ -27,12 +27,9 @@
   },
   "homepage": "https://github.com/natcobbinah/directionalDrilling#readme",
   "devDependencies": {
-    "@types/jest": "^26.0.24",
-    "jest": "^27.0.6",
-    "ts-jest": "^27.0.4",
+    "@types/jest": "^28.1.4",
+    "jest": "^28.1.2",
+    "ts-jest": "^28.0.5",
     "typescript": "^4.3.5"
-  },
-  "dependencies": {
-    "apexcharts": "^3.27.3"
   }
 }

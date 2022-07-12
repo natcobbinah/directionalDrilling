@@ -1,1 +1,1 @@
-export * from "./DirectionalDrilling";
+export * from "./classes/DirectionalDrilling";

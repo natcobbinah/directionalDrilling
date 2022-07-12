@@ -144,23 +144,27 @@ These depths and distances can be defined by a simple geometrical analysis of th
 
 ## npm package for directional drilling problems
 
-Methods available include the following:
+Interface:
 
-    build_UpAngle(value: number): number;
+    build_UpAngleFxn(): number;
 
-    horizontal_Displacement(value: number, kickoffPoint: number, trueVerticalDepth:number): number;
+    horizontal_DisplacementFxn(): number;
 
-    total_AngleY(): number;
+    total_AngleYFxn(): number;
 
-    total_AngleXplusY(): number;
+    total_AngleXplusYFxn(): number;
 
-    measured_DepthAtEndOfBuildSection(kickoffPoint: number): number;
+    measured_DepthAtEndOfBuildSectionFxn(): number;
 
-    trueVertical_DepthAtEndOfBuild(KickOffPoint: number): number;
+    trueVertical_DepthAtEndOfBuildFxn(): number;
 
-    horizontal_DeviationAtEndOfBuildUp(): number;
+    horizontal_DeviationAtEndOfBuildUpFxn(): number;
     
-    total_MeasuredDepth(trueVerticalDepth: number, kickoffPoint: number): number;
+    total_MeasuredDepthFxn(): number;
+
+    toDegreesFxn(radians: number): number;
+
+    toRadiansFxn(degrees: number): number;
     
     
 ## using Classes and Methods
@@ -169,54 +173,55 @@ Methods available include the following:
 
     import { DirectionalDrilling } from "ddrilling";
 
-    const drilling = new DirectionalDrilling();
+    const inputData : InitalizeDrillingData = {
+        buildUpAngle: 2,
+        horizontalDisplacement: 3000,
+        kickOffPoint: 2000,
+        trueVerticalDepth: 10000
+    }
 
-    //To compute the radius
-    console.log("Radius" + drilling.build_UpAngle(2));
+    const drilling = new DirectionalDrilling(inputData);
+    console.log(ddrilling.computationalResult());
 
-    //To compute Angle X
-    console.log("Angle X = " + drilling.horizontal_Displacement(3000, 2000, 10000));
+    OUTPUT
 
-    //To compute Angle Y
-    console.log("Angle Y = " + drilling.total_AngleY());
+    Directional Drilling Compuational Results
+    -------------------------------------------
+        Radius      => 2864.7889756541163
+        Angle X     => 0.9682854378192228
+        Angle Y     => 20.980333796791758
+        Angle (X+Y) => 21.94861923461098
+        Measured Depth At the End of Build => 3097.430961730549
+        Horizontal Deviation at End of Build => 207.64158017340878
+        Total Measured Depth => 10568.12478132156
 
-    //To compute Angle X + Y
-    console.log("Angle (X+Y) = " + drilling.total_AngleXplusY());
-
-    //To compute measured Depth at the end of Build Up
-    console.log("Measured Depth At the End of Build = " + drilling.measured_DepthAtEndOfBuildSection(2000));
-
-    //To compute Horizontal deviation at the end of Build
-    console.log("Horizontal Deviation at End of Build = " + drilling.horizontal_DeviationAtEndOfBuildUp());
-
-    //To compute Total measured Depth
-    console.log("Total Measured Depth = " + drilling.total_MeasuredDepth(10000, 2000));
     
    # JAVASCRIPT
    
     var ddrilling_1 = require("ddrilling");
-    var drilling = new ddrilling_1.DirectionalDrilling();
+
+     const inputData : InitalizeDrillingData = {
+        buildUpAngle: 2,
+        horizontalDisplacement: 3000,
+        kickOffPoint: 2000,
+        trueVerticalDepth: 10000
+    }
+
+    var drilling = new ddrilling_1.DirectionalDrilling(inputData);
+    console.log(ddrilling.computationalResult())
+
+     OUTPUT
+
+    Directional Drilling Compuational Results
+    -------------------------------------------
+        Radius      => 2864.7889756541163
+        Angle X     => 0.9682854378192228
+        Angle Y     => 20.980333796791758
+        Angle (X+Y) => 21.94861923461098
+        Measured Depth At the End of Build => 3097.430961730549
+        Horizontal Deviation at End of Build => 207.64158017340878
+        Total Measured Depth => 10568.12478132156
     
-    //To compute the radius
-    console.log("Radius" + drilling.build_UpAngle(2));
-    
-    //To compute Angle X
-    console.log("Angle X = " + drilling.horizontal_Displacement(3000, 2000, 10000));
-    
-    //To compute Angle Y
-    console.log("Angle Y = " + drilling.total_AngleY());
-    
-    //To compute Angle X + Y
-    console.log("Angle (X+Y) = " + drilling.total_AngleXplusY());
-    
-    //To compute measured Depth at the end of Build Up
-    console.log("Measured Depth At the End of Build = " + drilling.measured_DepthAtEndOfBuildSection(2000));
-        
-    //To compute Horizontal deviation at the end of Build
-    console.log("Horizontal Deviation at End of Build = " + drilling.horizontal_DeviationAtEndOfBuildUp());
-        
-    //To compute Total measured Depth
-    console.log("Total Measured Depth = " + drilling.total_MeasuredDepth(10000, 2000));
    
 ###### sample Question used for the above implementation
 
