@@ -170,8 +170,8 @@ Interface:
 ## using Classes and Methods
 
    # TYPESCRIPT
-
-    import { DirectionalDrilling } from "ddrilling";
+    import { DirectionalDrilling } from "./src/classes/DirectionalDrilling";
+    import { InitalizeDrillingData } from "./src/interfaces/IDirectionalDrillingTemplate";
 
     const inputData : InitalizeDrillingData = {
         buildUpAngle: 2,
@@ -181,7 +181,7 @@ Interface:
     }
 
     const drilling = new DirectionalDrilling(inputData);
-    console.log(ddrilling.computationalResult());
+    console.log(drilling.computationalResult());
 
     OUTPUT
 
@@ -198,19 +198,19 @@ Interface:
     
    # JAVASCRIPT
    
-    var ddrilling_1 = require("ddrilling");
+    var ddrilling = require('./src/classes/DirectionalDrilling');
 
-     const inputData : InitalizeDrillingData = {
+    let data = {
         buildUpAngle: 2,
         horizontalDisplacement: 3000,
         kickOffPoint: 2000,
         trueVerticalDepth: 10000
     }
 
-    var drilling = new ddrilling_1.DirectionalDrilling(inputData);
-    console.log(ddrilling.computationalResult())
+    var drilling = new ddrilling.DirectionalDrilling(data);
+    console.log(drilling.computationalResult())
 
-     OUTPUT
+    OUTPUT
 
     Directional Drilling Compuational Results
     -------------------------------------------
