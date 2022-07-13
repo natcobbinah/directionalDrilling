@@ -1,6 +1,6 @@
 {
   "name": "ddrilling",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "npm package for directional drilling problems",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

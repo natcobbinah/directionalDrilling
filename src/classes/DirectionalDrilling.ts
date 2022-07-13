@@ -107,13 +107,3 @@ export class DirectionalDrilling implements DirectionDrillingClassTemplate {
                     `;
     }
 }
-
-const inputData : InitalizeDrillingData = {
-    buildUpAngle: 2,
-    horizontalDisplacement: 3000,
-    kickOffPoint: 2000,
-    trueVerticalDepth: 10000
-}
-
-const ddrilling = new DirectionalDrilling(inputData);
-console.log(ddrilling.computationalResult())

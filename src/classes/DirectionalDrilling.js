@@ -93,11 +93,3 @@ var DirectionalDrilling = /** @class */ (function () {
     return DirectionalDrilling;
 }());
 exports.DirectionalDrilling = DirectionalDrilling;
-var inputData = {
-    buildUpAngle: 2,
-    horizontalDisplacement: 3000,
-    kickOffPoint: 2000,
-    trueVerticalDepth: 10000
-};
-var ddrilling = new DirectionalDrilling(inputData);
-console.log(ddrilling.computationalResult());

@@ -170,8 +170,8 @@ Interface:
 ## using Classes and Methods
 
    # TYPESCRIPT
-    import { DirectionalDrilling } from "./src/classes/DirectionalDrilling";
-    import { InitalizeDrillingData } from "./src/interfaces/IDirectionalDrillingTemplate";
+    import { DirectionalDrilling } from "ddrilling";
+    import { InitalizeDrillingData } from "ddrilling";
 
     const inputData : InitalizeDrillingData = {
         buildUpAngle: 2,
@@ -198,7 +198,7 @@ Interface:
     
    # JAVASCRIPT
    
-    var ddrilling = require('./src/classes/DirectionalDrilling');
+    var ddrilling = require('ddrilling');
 
     let data = {
         buildUpAngle: 2,
