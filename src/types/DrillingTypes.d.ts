@@ -1,4 +1,5 @@
 declare module "ddrilling" {
+    
     export interface InitalizeDrillingData {
         buildUpAngle: number;
         horizontalDisplacement: number;
